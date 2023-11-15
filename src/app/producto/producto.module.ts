@@ -8,6 +8,7 @@ import { ListaComponent } from './components/lista/lista.component';
 import { CrearComponent } from './components/crear/crear.component';
 import { ActualizarComponent } from './components/actualizar/actualizar.component';
 import { EliminarComponent } from './components/eliminar/eliminar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EliminarComponent } from './components/eliminar/eliminar.component';
     CommonModule,
     MatDialogModule,
     ProductoRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    ReactiveFormsModule
   ]
 })
 export class ProductoModule { }

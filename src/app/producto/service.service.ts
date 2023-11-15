@@ -18,7 +18,7 @@ export class ServiceService {
     return  this.data
   }
 
-  getOne(id : string){
+  getOne(id : string):Observable<any>{
     return this.http.get(`${this.baseUrl}/${id}`)
   }
 
@@ -26,12 +26,12 @@ export class ServiceService {
 
   }
 
-  putProducto(){
-
+  putProducto(id: any, data: any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/${id}`, data)
   }
 
-  deleteProducto(id : string){
-    
+  deleteProducto(id : string):Observable<any>{
+    return this.http.delete(`${this.baseUrl}/${id}`)
   }
 
 

@@ -15,8 +15,6 @@ export class ProductoComponent implements OnInit {
   elementos :  ProductoInterface[] = [];
 
   ngOnInit() : void{
-    if(this.elementos.length>0){
-    }else{
       this.service.getAll().subscribe(
         (res :any)=>{
           this.elementos = res;
@@ -29,9 +27,6 @@ export class ProductoComponent implements OnInit {
         }
 
       );
-    }
-
-
   }
 
   agregar(){
