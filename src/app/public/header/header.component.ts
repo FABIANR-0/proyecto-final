@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductoComponent } from 'src/app/producto/pages/producto/producto.component';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  token = localStorage.getItem('token_auth')
+
+  
+
+  //token = this.product.getToken
+
+  logaut(){
+    localStorage.clear();
+  }
 }

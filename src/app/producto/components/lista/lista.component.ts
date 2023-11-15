@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { ServiceService } from '../../service.service';
-
+import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import { ProductoComponent } from '../../pages/producto/producto.component';
+import { ActualizarComponent } from '../actualizar/actualizar.component';
 
 @Component({
   selector: 'app-lista',
@@ -11,20 +11,13 @@ import { ProductoComponent } from '../../pages/producto/producto.component';
 })
 export class ListaComponent {
 
-  constructor(private service : ServiceService, private product : ProductoComponent){}
+  constructor( private product : ProductoComponent, private dialog: MatDialog){}
 
   @Input() productData: any = {};
 
   ngOnChanges(){
   }
-  edit(id: any){
-    this.service.getOne(id).subscribe(
-      (res:any)=>{
-        const product = res;
-        console.log(product)
-      }
-    );
-  }
+
 
   delete(id:any){
     Swal.fire({
@@ -41,5 +34,20 @@ export class ListaComponent {
         Swal.fire('Borrado', 'El elemento ha sido borrado', 'success');
       }
     });
+  }
+
+  edit(id:any){
+   /* this.service.getOne(id).subscribe(
+      (res:any)=>{
+        const product = res;
+        console.log(product)
+      }
+    );*/
+    const dialogRef = this.dialog.open(ActualizarComponent, {
+      width: '500px',
+      height: '275px',
+      data: { id: id },
+    });
+
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ProductoRoutingModule } from './producto-routing.module';
 import { ProductoComponent } from './pages/producto/producto.component';
@@ -18,6 +19,7 @@ import { EliminarComponent } from './components/eliminar/eliminar.component';
   ],
   imports: [
     CommonModule,
+    MatDialogModule,
     ProductoRoutingModule,
     NgOptimizedImage
   ]

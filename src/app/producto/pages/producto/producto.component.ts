@@ -1,6 +1,7 @@
 import { ProductoInterface } from './../../../interface/producto-interface';
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../service.service';
+import { HeaderComponent } from 'src/app/public/header/header.component';
 
 @Component({
   selector: 'app-producto',
@@ -39,5 +40,13 @@ export class ProductoComponent implements OnInit {
 
   eliminar(id:any){
     this.elementos = this.elementos.filter(objeto => objeto.id !== id);
+  }
+
+  getToken(){
+    return localStorage.getItem('token_auth');
+  }
+
+  getOne(id:any){
+    return this.elementos.filter(objeto => objeto.id ===id)
   }
 }
