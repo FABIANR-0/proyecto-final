@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { ProductoComponent } from '../../pages/producto/producto.component';
 import { ActualizarComponent } from '../actualizar/actualizar.component';
 import { ServiceService } from '../../service.service';
+import { VerComponent } from '../ver/ver.component';
 
 @Component({
   selector: 'app-lista',
@@ -55,13 +56,14 @@ export class ListaComponent {
     });
   }
 
+  ver(id : any){
+    const dialogRef = this.dialog.open(VerComponent, {
+      width: '550px',
+      height: '300px',
+      data: { id: id },
+    });
+  }
   edit(id:any){
-   /* this.service.getOne(id).subscribe(
-      (res:any)=>{
-        const product = res;
-        console.log(product)
-      }
-    );*/
     const dialogRef = this.dialog.open(ActualizarComponent, {
       width: '600px',
       height: '500px',

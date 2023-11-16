@@ -35,7 +35,9 @@ export class ActualizarComponent {
     this.id = this.data.id;
     this.getProduct(this.id);
   }
-
+  closeModal(){
+    this.dialogRef.close();
+  }
   getProduct(id: any){
    this.service.getOne(id).subscribe(
      (res :any)=>{
@@ -75,6 +77,22 @@ export class ActualizarComponent {
           this.dialogRef.close();
           this.editForm.reset();
         },
+        (ERR :any)=> {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            title: 'Error intente de nuevo',
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+            customClass: {
+              container: 'my-swal-container',
+              title: 'my-swal-title',
+              icon: 'my-swal-icon',
+              popup: 'my-swal-popup',
+             },
+           })
+        }
        );
     }
   }

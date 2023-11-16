@@ -9,7 +9,7 @@
 
 <div class="content-card-product">
   <div class="content-like-icon-and-img" >
-    <div class="img-padding" >
+    <div (click)="ver(productData['id'])" class="img-padding" >
       <img [src]="productData['images']" alt="logo">
     </div>
   </div>
@@ -23,7 +23,7 @@
         <span class="price-new">${{productData['price'] }}</span>
       </div>
       <div class="icons">
-        <i (click)="edit(productData['id'])" class="bi bi-pencil-square up"></i>
+       <i  (click)="edit(productData['id'])" class="bi bi-pencil-square up"></i>
         <i (click)="delete(productData['id'])" class="bi bi-trash-fill del"></i>
       </div>
     </div>

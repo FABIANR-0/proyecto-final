@@ -22,8 +22,8 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}/${id}`)
   }
 
-  postProducto(){
-
+  postProducto(data : any):Observable<any>{
+    return this.http.post(this.baseUrl, data)
   }
 
   putProducto(id: any, data: any):Observable<any>{

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EliminarComponent } from './eliminar.component';
+import { VerComponent } from './ver.component';
 
-describe('EliminarComponent', () => {
-  let component: EliminarComponent;
-  let fixture: ComponentFixture<EliminarComponent>;
+describe('VerComponent', () => {
+  let component: VerComponent;
+  let fixture: ComponentFixture<VerComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EliminarComponent]
+      declarations: [VerComponent]
     });
-    fixture = TestBed.createComponent(EliminarComponent);
+    fixture = TestBed.createComponent(VerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

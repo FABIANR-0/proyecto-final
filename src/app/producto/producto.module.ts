@@ -7,8 +7,8 @@ import { ProductoComponent } from './pages/producto/producto.component';
 import { ListaComponent } from './components/lista/lista.component';
 import { CrearComponent } from './components/crear/crear.component';
 import { ActualizarComponent } from './components/actualizar/actualizar.component';
-import { EliminarComponent } from './components/eliminar/eliminar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VerComponent } from './components/ver/ver.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListaComponent,
     CrearComponent,
     ActualizarComponent,
-    EliminarComponent
+    VerComponent
   ],
   imports: [
     CommonModule,
