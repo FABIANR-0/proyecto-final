@@ -41,10 +41,11 @@ export class ActualizarComponent {
   getProduct(id: any){
    this.service.getOne(id).subscribe(
      (res :any)=>{
+      //console.log(res)
       this.editForm.patchValue({
-        title: res.title,
-        price: res.price,
-        image: res.images[0]
+        title: res.data[0].name,
+        price: res.data[0].price,
+        image: res.data[0].url_image
       });
       }
    )

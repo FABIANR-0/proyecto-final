@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { ServiceService } from '../../service.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ProductoInterface } from 'src/app/interface/producto-interface';
 
 @Component({
   selector: 'app-ver',
@@ -10,9 +11,15 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class VerComponent {
 
   id: string = '';
-  product:any;
+  product: ProductoInterface = {
+    id: '',
+    name: '',
+    price: 0,
+    stock: 0,
+    url_image: '',
+    description: ''
+  };
   constructor(
-
     private service : ServiceService,
     private dialogRef : MatDialogRef<VerComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -22,7 +29,7 @@ export class VerComponent {
     this.id = this.data.id;
     this.service.getOne(this.id).subscribe(
       (res :any)=>{
-       this.product = res;
+       this.product = res.data[0];
        }
     )
   }

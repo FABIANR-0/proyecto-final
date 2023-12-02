@@ -20,7 +20,7 @@ export class AuthInterceptor implements HttpInterceptor {
     if(localStorage.getItem("token_auth")){
       cloneReq =  request.clone({
         setHeaders: {
-          Authorization : localStorage.getItem("token_auth")!
+          Authorization : `Bearer ${localStorage.getItem("token_auth")}`!
         }
       })
     }

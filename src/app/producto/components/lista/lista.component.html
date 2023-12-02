@@ -10,12 +10,12 @@
 <div class="content-card-product">
   <div class="content-like-icon-and-img" >
     <div (click)="ver(productData['id'])" class="img-padding" >
-      <img [src]="productData['images']" alt="logo">
+      <img [src]="productData['url_image']" alt="logo">
     </div>
   </div>
   <div class="content-card-body">
     <div class="title-card">
-      <span >{{productData['title']}}</span>
+      <span >{{productData['name']}}</span>
     </div>
     <div class="content-price-discount">
       <div class="content-price">

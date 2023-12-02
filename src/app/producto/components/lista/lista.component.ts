@@ -29,7 +29,8 @@ export class ListaComponent {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí, bórralo'
+      confirmButtonText: 'Sí, bórralo',
+      denyButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
         this.service.deleteProducto(id).subscribe(

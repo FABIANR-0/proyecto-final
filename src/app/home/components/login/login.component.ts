@@ -22,13 +22,15 @@ export class LoginComponent {
     }
   }
   form = this.fb.group({
-    email : [""],
+    username : [""],
     password: [""]
   });
 
   enviar(){
-    this.auth.getToken(this.form.value).subscribe((arg : TokenInterface) => {
-      localStorage.setItem('token_auth',arg.access_token);
+    this.auth.getToken(this.form.value).subscribe(res => {
+      //console.log(res)
+      localStorage.setItem('token_auth',res.token);
+      localStorage.setItem('id_user',res.id);
       Swal.fire({
         position: 'top-end',
         icon: 'success',

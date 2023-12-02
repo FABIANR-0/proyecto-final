@@ -1,7 +1,8 @@
 export interface ProductoInterface {
     id: string
-    title : string ,
+    name : string ,
     price: number,
-    images : string[],
+    stock:number,
+    url_image : string,
     description : string,
 }

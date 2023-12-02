@@ -19,10 +19,10 @@ export class ProductoComponent implements OnInit {
   ngOnInit() : void{
       this.service.getAll().subscribe(
         (res :any)=>{
-          this.elementos = res;
+          this.elementos = res.data;
         } ,
         (ERR :any)=> {
-          console.log("error");
+          console.log("error"+ ERR);
         }
       );
   }
