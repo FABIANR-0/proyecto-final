@@ -10,7 +10,7 @@ export class ServiceService {
 
   constructor(private http : HttpClient) {}
 
-  baseUrl = "http://localhost:4200/product";
+  baseUrl = "https://backappclo.azurewebsites.net/product";
 
   getAll() : Observable<any>{
     return this.http.get(this.baseUrl)

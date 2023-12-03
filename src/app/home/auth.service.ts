@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private http  : HttpClient) { }
 
-  baseUrl = "http://localhost:4200/auth/";
+  baseUrl = "https://backappclo.azurewebsites.net/auth/";
 
   getToken ( informacion : any) {
     //console.log(informacion)
