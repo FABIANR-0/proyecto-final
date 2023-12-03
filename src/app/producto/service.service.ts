@@ -1,6 +1,5 @@
 import { ProductoInterface } from './../interface/producto-interface';
 import { Observable } from 'rxjs';
-import { environment } from './../../environments/environment';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
