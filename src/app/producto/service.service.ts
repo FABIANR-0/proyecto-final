@@ -13,7 +13,8 @@ export class ServiceService {
   baseUrl = "https://backappclo.azurewebsites.net/product";
 
   getAll() : Observable<any>{
-    return this.http.get(this.baseUrl)
+    const idUser = localStorage.getItem('id_user');
+    return this.http.get(`${this.baseUrl}/all/${idUser}`)
   }
 
   getOne(id : string):Observable<any>{

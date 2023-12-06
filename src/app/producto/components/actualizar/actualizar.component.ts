@@ -17,7 +17,9 @@ export class ActualizarComponent {
 
   editForm: FormGroup = new FormGroup({
     title : new FormControl(),
+    description : new FormControl(),
     price : new FormControl(),
+    stock : new FormControl(),
     image : new FormControl()
   });
 
@@ -41,9 +43,10 @@ export class ActualizarComponent {
   getProduct(id: any){
    this.service.getOne(id).subscribe(
      (res :any)=>{
-      //console.log(res)
       this.editForm.patchValue({
         title: res.data[0].name,
+        description: res.data[0].description,
+        stock: res.data[0].stock,
         price: res.data[0].price,
         image: res.data[0].url_image
       });
@@ -54,9 +57,11 @@ export class ActualizarComponent {
   edit(){
     if (this.editForm.valid) {
       const data = {
-        title: this.editForm.get('title')?.value,
+        name: this.editForm.get('title')?.value,
+        description: this.editForm.get('description')?.value,
         price: this.editForm.get('price')?.value,
-        images: [this.editForm.get('image')?.value],
+        stock: this.editForm.get('stock')?.value,
+        url_image: this.editForm.get('image')?.value,
       }
 
       this.service.putProducto(this.id, data).subscribe(
@@ -82,7 +87,7 @@ export class ActualizarComponent {
           Swal.fire({
             position: 'top-end',
             icon: 'warning',
-            title: 'Error intente de nuevo',
+            title: ERR.error.error,
             showConfirmButton: false,
             timer: 1500,
             toast: true,

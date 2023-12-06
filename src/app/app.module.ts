@@ -10,6 +10,7 @@ import { HeaderComponent } from './public/header/header.component';
 import { FooterComponent } from './public/footer/footer.component';
 import { NgOptimizedImage } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TokenExpirationInterceptor } from './interceptor/token-expiration.interceptor';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS , useClass : AuthInterceptor , multi: true}
+    {provide: HTTP_INTERCEPTORS , useClass : AuthInterceptor , multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass : TokenExpirationInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

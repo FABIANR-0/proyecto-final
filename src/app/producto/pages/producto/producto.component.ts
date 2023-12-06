@@ -22,7 +22,7 @@ export class ProductoComponent implements OnInit {
           this.elementos = res.data;
         } ,
         (ERR :any)=> {
-          console.log("error"+ ERR);
+         // console.log("error"+ ERR);
         }
       );
   }
